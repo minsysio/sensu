@@ -1,0 +1,25 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - "/var/log/minsys/sensu/*-metrics.json"
+      document_type: sensu-metrics
+      input_type: log
+
+  registry_file: /var/lib/filebeat/registry
+
+output:
+  logstash:
+    enabled: true
+    hosts: ["logstash-klima.zesteinformatique.cloud.minsys.io:5302"]
+    tls:
+      certificate_authorities: ["/opt/filebeat/tls/logstash-filebeat.crt"]
+
+logging:
+  to_syslog: false
+  to_files: true
+  files:
+    path: /var/log/filebeat/
+    name: filebeat
+    keepfiles: 7
+  level: debug

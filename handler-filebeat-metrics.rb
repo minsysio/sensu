@@ -9,20 +9,20 @@ class FilebeatMetricsHandler < Sensu::Handler
   def handle
     metrics = {}
     @event['check']['output'].split("\n").each do |line|
-      v = line.split("\t")    
+      v = line.split(" ")    
       time = Time.now.utc.iso8601
+      hostname = ::Socket.gethostname
       metrics = {
         :@timestamp    => time,
         :@version      => 1,
-        :source        => ::Socket.gethostname,
-        :message       => @event['check']['output'],
+        :source        => hostname,
         :host          => @event['client']['name'],
         :check_name    => @event['check']['name'],
         :command       => @event['check']['command'],
-        :key => v[0],
+        :metric => v[0],
         :value => v[1]
       }
-      File.open("/var/log/minsys/sensu/metrics.json", 'a') {|f| f.write(JSON.generate(metrics))} 
+      File.open("/var/log/minsys/sensu/#{hostname}-metrics.json", 'a') {|f| f.write(JSON.generate(metrics))} 
     end
   end
 end

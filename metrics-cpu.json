@@ -1,0 +1,11 @@
+{
+    "checks": {
+        "CPU_metrics": {
+            "type": "metric",
+            "command": "metrics-cpu-mpstat.rb -s metric",
+            "interval": 60,
+            "subscribers": ["metrics"],
+            "handlers": ["filebeat"]
+        }
+    }
+}
