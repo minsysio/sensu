@@ -1,0 +1,11 @@
+{
+    "checks": {
+        "NET_TRAFFIC_metrics": {
+            "type": "metric",
+            "command": "metrics-netif.rb -s metric",
+            "interval": 30,
+            "subscribers": ["metrics"],
+            "handlers": ["logstash-metrics"]
+        }
+    }
+}
