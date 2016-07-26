@@ -2,7 +2,7 @@
     "handlers": {
         "logstash-metrics": {
             "type": "pipe",
-            "command": "/etc/sensu/handlers/handler-logstash.rb"
+            "command": "/etc/sensu/handlers/handler-logstash-metrics.rb"
         }
     }
 }

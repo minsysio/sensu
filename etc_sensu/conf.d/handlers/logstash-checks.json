@@ -1,0 +1,8 @@
+{
+    "handlers": {
+        "logstash-checks": {
+            "type": "pipe",
+            "command": "/etc/sensu/handlers/handler-logstash-checks.rb"
+        }
+    }
+}
