@@ -2,7 +2,6 @@
 #see : https://github.com/inokappa/sensu-handler-metrics-elasticsearch/blob/master/elasticsearch-metrics.rb
 require 'sensu-handler'
 require 'json'
-require 'time'
 
 class FilebeatMetricsHandler < Sensu::Handler
 
@@ -10,7 +9,6 @@ class FilebeatMetricsHandler < Sensu::Handler
     metrics = {}
     @event['check']['output'].split("\n").each do |line|
       v = line.split(" ")    
-      time = Time.now.utc.iso8601
       hostname = ::Socket.gethostname
       metrics = {
         :source        => hostname,
@@ -20,7 +18,7 @@ class FilebeatMetricsHandler < Sensu::Handler
         :metric => v[0],
         :value => v[1]
       }
-      #File.open("/var/log/minsys/sensu/#{hostname}-metrics.json", 'a') {|f| f.write(JSON.generate(metrics))} 
+      File.open("/var/log/minsys/sensu/test01-metrics.json", 'a') {|f| f.write(JSON.generate(metrics))} 
     end
   end
 end
