@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "CPU_Usage_Sytem": {
+      "command": "check-cpu.rb --system -w 40 -c 60",
+      "interval": 60,
+      "subscribers": [ "all" ],
+      "handlers": ["logstash-checks"]
+    }
+  }
+}

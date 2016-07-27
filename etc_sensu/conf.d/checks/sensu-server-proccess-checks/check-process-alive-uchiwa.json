@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "PROCESS_Alive_Uchiwa": {
+      "command": "check-process.rb -p uchiwa -W 1",
+      "interval": 600,
+      "subscribers": [ "uchiwa" ],
+      "handlers": ["logstash-checks"]
+    }
+  }
+}

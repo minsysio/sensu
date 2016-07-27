@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "CPU_Load_Average": {
+      "command": "check-load.rb -w 0.7,0.6,0.5 -c 0.9,0.8,0.7",
+      "interval": 60,
+      "subscribers": [ "all" ],
+      "handlers": ["logstash-checks"]
+    }
+  }
+}

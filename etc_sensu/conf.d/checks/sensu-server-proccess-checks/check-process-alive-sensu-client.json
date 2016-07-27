@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "PROCESS_Alive_Sensu-Client": {
+      "command": "check-process.rb -p sensu-client -W 1",
+      "interval": 600,
+      "subscribers": [ "sensu-client" ],
+      "handlers": ["logstash-checks"]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "CPU_Usage_SoftIRQ": {
+      "command": "check-cpu.rb --softirq -w 40 -c 60",
+      "interval": 60,
+      "subscribers": [ "all" ],
+      "handlers": ["logstash-checks"]
+    }
+  }
+}

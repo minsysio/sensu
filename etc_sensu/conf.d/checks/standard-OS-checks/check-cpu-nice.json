@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "CPU_Usage_Nice": {
+      "command": "check-cpu.rb --nice -w 40 -c 60",
+      "interval": 60,
+      "subscribers": [ "all" ],
+      "handlers": ["logstash-checks"]
+    }
+  }
+}

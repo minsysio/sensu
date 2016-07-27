@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "DISK_Usage_Percent": {
+      "command": "check-disk-usage.rb -w 60 -c 85 -W 75 -K 85 -I /",
+      "interval": 300,
+      "subscribers": [ "all" ],
+      "handlers": ["logstash-checks"]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "CPU_Usage_Steal": {
+      "command": "check-cpu.rb --steal -w 40 -c 60",
+      "interval": 60,
+      "subscribers": [ "all" ],
+      "handlers": ["logstash-checks"]
+    }
+  }
+}
