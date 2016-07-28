@@ -3,7 +3,7 @@
         "RAM_metrics": {
             "type": "metric",
             "command": "metrics-memory-percent.rb -s metric",
-            "interval": 30,
+            "interval": 60,
             "subscribers": ["metrics"],
             "handlers": ["logstash-metrics"]
         }

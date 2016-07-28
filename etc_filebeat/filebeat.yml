@@ -2,8 +2,13 @@ filebeat:
   prospectors:
     -
       paths:
-        - "/var/log/minsys/sensu/*-metrics.json"
+        - "/var/log/minsys/sensu/metrics.json"
       document_type: sensu-metrics
+      input_type: log
+    -
+      paths:
+        - "/var/log/minsys/sensu/checks.json"
+      document_type: sensu-checks
       input_type: log
 
   registry_file: /var/lib/filebeat/registry
@@ -20,6 +25,6 @@ logging:
   to_files: true
   files:
     path: /var/log/filebeat/
-    name: filebeat
+    name: filebeat.debug.log
     keepfiles: 7
   level: debug

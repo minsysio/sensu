@@ -3,7 +3,7 @@
         "NET_TRAFFIC_metrics": {
             "type": "metric",
             "command": "metrics-netif.rb -s metric",
-            "interval": 30,
+            "interval": 60,
             "subscribers": ["metrics"],
             "handlers": ["logstash-metrics"]
         }
