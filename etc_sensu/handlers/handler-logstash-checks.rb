@@ -42,6 +42,5 @@ class LogstashChecksHandler < Sensu::Handler
       socket = UDPSocket.new
       socket.send(JSON.generate(check), 0, "127.0.0.1", 5515)
       socket.close
-    end
   end
 end
