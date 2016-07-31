@@ -25,6 +25,6 @@ logging:
   to_files: true
   files:
     path: /var/log/filebeat/
-    name: filebeat.debug.log
+    name: filebeat.error.log
     keepfiles: 7
   level: debug

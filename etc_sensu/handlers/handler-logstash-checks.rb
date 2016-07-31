@@ -27,7 +27,7 @@ class LogstashChecksHandler < Sensu::Handler
     hostname = ::Socket.gethostname
     check = {
       :source        => hostname,
-      :action        => ["action-#{action_to_string}"],
+      :tags          => ["sensu-#{action_to_string}"],
       :message       => @event['check']['output'],
       :host          => @event['client']['name'],
       :timestamp     => @event['check']['issued'],
@@ -36,7 +36,8 @@ class LogstashChecksHandler < Sensu::Handler
       :command       => @event['check']['command'],
       :status        => event_status,
       :flapping      => @event['check']['flapping'],
-      :occurrences   => @event['occurrences']
+      :occurrences   => @event['occurrences'],
+      :action        => ["#{action_to_string}"]
     }
       socket = UDPSocket.new
       socket.send(JSON.generate(check), 0, "127.0.0.1", 5515)

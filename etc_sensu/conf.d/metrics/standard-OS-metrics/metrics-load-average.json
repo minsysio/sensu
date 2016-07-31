@@ -1,8 +1,8 @@
 {
     "checks": {
-        "RAM_metrics": {
+        "LOAD_AVERAGE_metrics": {
             "type": "metric",
-            "command": "metrics-memory-percent.rb -s metric",
+            "command": "metrics-load.rb -s metric",
             "interval": 60,
             "subscribers": ["all"],
             "handlers": ["logstash-metrics"]
