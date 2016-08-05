@@ -4,7 +4,7 @@
             "type": "metric",
             "command": "metrics-netif.rb -s metric",
             "interval": 60,
-            "subscribers": ["metrics"],
+            "subscribers": ["all"],
             "handlers": ["logstash-metrics"]
         }
     }
