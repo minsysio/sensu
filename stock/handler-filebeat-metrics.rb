@@ -56,3 +56,4 @@ end
 #      socket.puts(JSON.generate(filebeat_metrics))
 #      socket.close
 #    end
+#    
